@@ -11,20 +11,18 @@ if mat_file is not None:
     W = data['W']
     P = data['P']
     P = np.vstack((W,P))
-    P = P.copy()
     yellow = P[:11,:]
-    magenta = np.zeros((11,31), np.float64)
-    magenta[0,:] = P[0,:]
-    magenta[1,:] = P[11,:]
-    magenta[2,:] = P[22,:]
-    magenta[3,:] = P[33,:]
-    magenta[4,:] = P[44,:]
-    magenta[5,:] = P[55,:]
-    magenta[6,:] = P[66,:]
-    magenta[7,:] = P[77,:]
-    magenta[8,:] = P[88,:]
-    magenta[9,:] = P[99,:]
-    magenta[10,:] = P[110,:]
+    magenta = P[0,:]
+    magenta = np.vstack((magenta,P[11,:]))
+    magenta = np.vstack((magenta,P[22,:]))
+    magenta = np.vstack((magenta,P[33,:]))
+    magenta = np.vstack((magenta,P[44,:]))
+    magenta = np.vstack((magenta,P[55,:]))
+    magenta = np.vstack((magenta,P[66,:]))
+    magenta = np.vstack((magenta,P[77,:]))
+    magenta = np.vstack((magenta,P[88,:]))
+    magenta = np.vstack((magenta,P[99,:]))
+    magenta = np.vstack((magenta,P[110,:]))
 
 
     def ConvertToTristimulusValues(reflection, cmfs, illuminant):
