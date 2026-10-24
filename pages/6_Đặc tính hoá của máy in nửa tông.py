@@ -11,6 +11,7 @@ if mat_file is not None:
     W = data['W']
     P = data['P']
     P = np.vstack((W,P))
+    P = P.copy()
     yellow = P[:11,:]
     magenta = np.zeros((11,31), np.float64)
     magenta[0,:] = P[0,:]
